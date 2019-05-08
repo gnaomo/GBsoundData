@@ -7,4 +7,9 @@ Lua script to be used with VBA emulator to display sound data on the screen (suc
 4. Open a new script window by going on Tools->Lua Scripting->New Lua Script Window...
 5. Use "Browse..." to select GBsoundData.lua
 6. Click "Run"
+# Documentation
+* http://tasvideos.org/EmulatorResources/VBA/LuaScriptingFunctions.html
+* http://gbdev.gg8.se/wiki/articles/Gameboy_sound_hardware
+* http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf
+
 
