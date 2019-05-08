@@ -1,5 +1,5 @@
 # GBsoundData
-Lua script to be used with VBA emulator to display sound data on the screen (such as note,envelope,wave ram,ecc...) while playing any GameBoy or GameBoyColor game
+Lua script to be used with VBA emulator to display sound data on the screen (such as note,envelope,wave ram,ecc...) while playing any GameBoy or GameBoyColor game, ouput data is formatted for replicable use on LSDJ (a game boy music editor)
 # How to use
 1. Clone the repo
 2. Download a VBA release that has Lua Scripting supported (i tested with this one: https://github.com/TASVideos/vba-rerecording/releases/tag/480LRC4)
