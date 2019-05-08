@@ -131,7 +131,6 @@ function waveRAM()
 		waveTable[i+1] = BinToDec(DecToBin(memory.readbyte(0xFF30+j),4))
 		j=j+1
 	end
-	--print(waveTable)
 	for i=1,32,1 do
 		gui.pixel(15 - i+120+6, 15-waveTable[33-i]+15, white)
 	end
@@ -157,7 +156,7 @@ while true do
 	--PULSE1
 	
 	pulse1Freq = DecToBin(memory.readbyte(0xFF14),3)..DecToBin(memory.readbyte(0xFF13),8)
-	gui.text(2,pulseY + 8 * 0, "Pulse 1", white, p1color)
+	gui.text(2,pulseY + 8 * 0, "--Pulse 1--", white, p1color)
 	gui.text(2,pulseY + 8 * 1, note(pulse1Freq).." "..trigger(0xFF14), twhite, p1color)
 	gui.text(2,pulseY + 8 * 2, envelope(0xFF12), white, p1color)
 	gui.text(2,pulseY + 8 * 3, output(4,8), white, p1color)
@@ -168,7 +167,7 @@ while true do
 	--PULSE 2
 	
 	pulse2Freq = DecToBin(memory.readbyte(0xFF19),3)..DecToBin(memory.readbyte(0xFF18),8)
-	gui.text(55,pulseY + 8 * 0, "Pulse 2", white, p2color)
+	gui.text(55,pulseY + 8 * 0, "--Pulse 2--", white, p2color)
 	gui.text(55,pulseY + 8 * 1, note(pulse2Freq).." "..trigger(0xFF19), twhite, p2color)
 	gui.text(55,pulseY + 8 * 2, envelope(0xFF17), white, p2color)
 	gui.text(55,pulseY + 8 * 3, output(3,7), white, p2color)
@@ -178,7 +177,7 @@ while true do
 	--WAVE
 	
 	waveFreq = DecToBin(memory.readbyte(0xFF1E),3)..DecToBin(memory.readbyte(0xFF1D),8)
-	gui.text(2,wavenoiseY + 8 * 0, "Wave", white, wcolor)
+	gui.text(2,wavenoiseY + 8 * 0, "--Wave--", white, wcolor)
 	gui.text(2,wavenoiseY + 8 * 2, note(waveFreq).." "..trigger(0xFF1E), white, wcolor)
 	gui.text(2,wavenoiseY + 8 * 3, volume(0xFF1C), white, wcolor)
 	gui.text(2,wavenoiseY + 8 * 4, output(2,6), white, wcolor)
@@ -187,7 +186,7 @@ while true do
 	
 	--NOISE
 	
-	gui.text(55,wavenoiseY + 8 * 0, "Noise", white, ncolor)
+	gui.text(55,wavenoiseY + 8 * 0, "--Noise--", white, ncolor)
 	gui.text(55,wavenoiseY + 8 * 1, envelope(0xFF21).." "..trigger(0xFF23), white, ncolor)
 	gui.text(55,wavenoiseY + 8 * 2, output(1,5), white, ncolor)
 	gui.text(55,wavenoiseY + 8 * 3, lengthData(0xFF20,0XFF23), white, ncolor)
@@ -195,13 +194,13 @@ while true do
 	
 	--SOUND CONTROL REGISTER
 	
-	gui.text(2,wavenoiseY + 8 * 7, "Sound Control Register", white, scrcolor)
+	gui.text(2,wavenoiseY + 8 * 7, "--Sound Control Register--", white, scrcolor)
 	gui.text(2,wavenoiseY + 8 * 8, vin(0xFF24).."  "..leftandright(0xFF25), white, scrcolor)
 	gui.text(2,wavenoiseY + 8 * 9, soundOnOff(0xFF26),white,scrcolor)
 	
 	--WAVE RAM
 	
-	gui.text(108,pulseY + 8 * 0, "Wave RAM", white, wcolor)
+	gui.text(108,pulseY + 8 * 0, "--Wave RAM--", white, wcolor)
 	gui.box(108, 14, 141, 31, 0x000000AA, wcolor)
 	waveRAM()
 	
