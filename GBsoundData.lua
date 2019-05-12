@@ -1,6 +1,6 @@
 #!/usr/bin/lua
 
---[[ Please before trying to understand this mess look to these pages:
+--[[ Please before trying to understand this mess look at these pages:
     http://tasvideos.org/EmulatorResources/VBA/LuaScriptingFunctions.html
     http://gbdev.gg8.se/wiki/articles/Gameboy_sound_hardware
     http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf
