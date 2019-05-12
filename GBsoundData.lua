@@ -188,9 +188,14 @@ function volume(memoryByte)
 	end
 end
 function shape(memoryByte)
+--[[Value written in Hex because in LSDJ it's written like that,
+		also LSDJ treats FF as minimum shape and 00 as maximum (usually 00 is minimum and FF is maximum) 
+		so the output is kinda "reversed"
+	]]
 	return "Shape: "..DecToHex(math.abs(memory.readbyte(memoryByte)-255))
 end
 function vin(memoryByte)
+--Vin is apparentely unused
 	return "Vin: "..DecToBin(memory.readbyte(memoryByte),8)
 end
 function leftandright(memoryByte)
@@ -200,6 +205,10 @@ function soundOnOff(memoryByte)
 	return "Sound On/Off: "..DecToBin(memory.readbyte(memoryByte),8)
 end
 function waveRAM()
+--[[Wave Graph is 32x16
+1 byte has 2 4 bit long Y coordinates
+there are 16 bytes total so a wave table is long 32
+]]
 	waveTable={}
 	j=0
 	for i=1,32,2 do
@@ -207,12 +216,15 @@ function waveRAM()
 		waveTable[i+1] = BinToDec(DecToBin(memory.readbyte(0xFF30+j),4))
 		j=j+1
 	end
-	--print(waveTable)
+--Graph Line coordinates
 	for i=1,32,1 do
-		gui.pixel(15 - i+120+6, 15-waveTable[33-i]+15, white)
+		gui.pixel(141-i, 30-waveTable[33-i], white)
 	end
 end
 function output(left,right)
+--[[TO DO
+	Make L/R transparent when not active
+]]
 	left=string.sub(DecToBin(memory.readbyte(0xFF25),8),left,left)
 	right=string.sub(DecToBin(memory.readbyte(0xFF25),8),right,right)
 	if left == "0" then
@@ -229,7 +241,9 @@ function output(left,right)
 end
 
 while true do
-	
+--[[
+Pulse 1, Pulse 2 and Wave channel frequency each is long 11 bits so 8 + 3 bits must be connected from 2 seperate registers
+]]
 	--PULSE1
 	
 	pulse1Freq = DecToBin(memory.readbyte(0xFF14),3)..DecToBin(memory.readbyte(0xFF13),8)
