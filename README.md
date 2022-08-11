@@ -1,16 +1,17 @@
 # GBsoundData
-Lua script to be used with VBA emulator to display sound data on the screen (such as note,envelope,wave ram,ecc...) while playing any GameBoy or GameBoyColor game, ouput data is formatted for replicable use on LSDJ (a game boy music editor)
+Lua script to be used with VBA or Bizhawk to display sound data on the screen (such as note,envelope,wave ram,ecc...) while playing any GameBoy or GameBoyColor game, ouput data is formatted for replicable use on LSDJ (a game boy music editor)
 
 Video demo:
 https://youtu.be/9zm9Wb_PGtk
 
 # How to use
 1. Clone the repo
-2. Download a VBA release that has Lua Scripting supported (I tested only this one: https://github.com/TASVideos/vba-rerecording/releases/tag/480LRC4)
-3. Run VBA and load your game by going on File->Open GBx ROM...
-4. Open a new script window by going on Tools->Lua Scripting->New Lua Script Window...
-5. Use "Browse..." to select GBsoundData.lua
-6. Click "Run"
+2. Download VBA with Lua Scripting supported (I tested only this one: https://github.com/TASVideos/vba-rerecording/releases/tag/480LRC4) or Bizhawk:https://tasvideos.org/Bizhawk
+3. Run Bizhawk or VBA and load your ROM
+4. VBA: Tools->Lua Scripting->New Lua Script Window...
+   Bizhawk :Tools->Lua Console
+5. Browse and select GBsoundData[...].lua
+6. Have fun!
 # Documentation
 These pages helped me making this tool:
 * http://tasvideos.org/EmulatorResources/VBA/LuaScriptingFunctions.html
