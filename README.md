@@ -12,10 +12,12 @@ https://youtu.be/9zm9Wb_PGtk
    Bizhawk :Tools->Lua Console
 5. Browse and select GBsoundData[...].lua
 6. Have fun!
+
+![ezgif-5-224725bb58](https://user-images.githubusercontent.com/38522864/184088812-cc3bccfa-20a1-455b-b393-f8f579d1ba68.gif)
+
 # Documentation
 These pages helped me making this tool:
 * http://tasvideos.org/EmulatorResources/VBA/LuaScriptingFunctions.html
 * http://gbdev.gg8.se/wiki/articles/Gameboy_sound_hardware
 * http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf
-
 
